@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="sales" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+            <tab>sales</tab>
+            <group id="shipping_limited_products" translate="label" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="80">
+                <label>Shipping Limited Products</label>
+                <field id="enabled" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="max_weight" translate="label comment" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Max Weight</label>
+                    <validate>validate-number validate-greater-than-zero</validate>
+                    <comment>Max Weight</comment>
+                </field>
+                <field id="error_message" translate="label" sortOrder="30" type="textarea" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Error to Show in Shopping Cart</label>
+                </field>
+            </group>
+            <!--<resource>Lof_BasePrice::config_baseprice</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General</label>
+                <field id="enabled" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable module</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="template" translate="label comment" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Base price template</label>
+                    <comment>Template to render the base price, variables to use: {BASE_PRICE}, {REF_AMOUNT}, {REF_UNIT}, {REF_DELIVERY}</comment>
+                </field>
+                <field id="conversion" translate="label" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Conversion mapping</label>
+                    <frontend_model>Lof\BasePrice\Block\Adminhtml\System\Config\Form\Field\ConversionMapping</frontend_model>
+                    <backend_model>Magento\Config\Model\Config\Backend\Serialized\ArraySerialized</backend_model>
+                </field>
+            </group>-->
+        </section>
+    </system>
+</config>
